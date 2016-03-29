@@ -1,37 +1,40 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8"
+		<meta charset="UTF-8">
 		<title>Quiz 2</title>
+		<link rel="stylesheet" type="text/css" href="quiz2.css">
 	</head>
 	<body>
 		
 		<div class="content">
 			<h1>Hi, Welcome to the second quiz!</h1>
 			<p>Make sure the containers below respond to the events or functions implemented with quiz2.js</p>
+
 			<div class="evens">			
 				<div class="click">
-					<span>click event</span>
+					<span>&lt;&lt;&lt;Click here!&gt;&gt;&gt;</span><br/><br/>
 				</div>
-				<div class="mouse-over">
-					<span>mouse over event</span>
-					<p>Who's the richest person you know? (mouse over to find out)</p>
+				<div class="mouseover">
+					<span>&lt;&lt;&lt;Mouse over here!&gt;&gt;&gt;</span>
+					<p>Who be the richest of all creatures?</p>
 				</div>
-				<div>
-					<span>submit event</span>
+				<div class="submit">
+					<!-- <span>submit event</span> -->
 					<!-- The form not having an action or method is not a bug in this case -->
 					<form>
-						<label for="form">AJAX, yo!</label>
-						<input type="text" id="form" name="form" placeholder="Enter Some Text" />
-						<input value="SUBMIT">
+						<!-- <label for="form">AJAX, yo!</label> -->
+						<input type="text" id="form" name="form" placeholder="Enter Some Text">
+						<input type="submit" value="SUBMIT">
 					</form>
 				</div>
-				div class="timeout">
-					<span>timeout function</span>
+				<div class="timeout" hidden="true">
+					<span>What'd I miss?</span>
 				</div>
 			</div>
 		
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="quiz2.js"></script>
 	</body>
 </html>

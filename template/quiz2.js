@@ -4,36 +4,57 @@
 	// Use ajax to reach the api endpoint
 	// Whether or not you use jQuery, you still have to fix the jQuery errors. Removing jQuery is not fixing the problem.
 
-	$mouseover = $('.mouseover');
-	$click     = $('.clikc');
-	$sub       = $('.submit');
+	
 
-	$mouseover.on('mouseover', function() {
-		$this = $(this);
-		$(this).html('Scrooge McDuck!');
-		$(this).height($(this).height() + 50);
+
+	$mouseover = $('.mouseover');
+	$click     = $('.click');
+	$sub       = $('.submit');
+	var i = 0;
+
+	$(".mouseover").mouseover(function() {
+		// because having it get taller and taller was annoying
+		if (i == 0){
+			i= i+1;
+			$(".mouseover").height($(this).height() + 50);
+		}
+
+		$(".mouseover").css("font-weight", "200");
+		$(".mouseover").css("font-size", "65pt");
+
+
+		$(".mouseover").html('Scrooge McDuck!');
+		
 	});
 
-	$click.click('click', function() {
-		$this.hmtl('Peace Out!')
-		$(this).fadeout(1500);
+	$(".click").click(function() {
+		$(".click").html('<p>Peace Out!</p>')
+		$(".click").fadeOut(1500);
 		return false;
 	});
 
-	$submit.on('submit', function(e) {
+	$sub.on('submit', function(e) {
 		e.preventDefault();
-		if ($(this).find('input[type="text"]').val() !== '') {
-			$(this).find('input').foreach(function() {
-				$(this).fadeout('slow');
+
+		var input = $('#form').val();
+		if (input!==""){
+			$(".submit").append("<h2>Congratulations! You\'ve entered some text!</h2>");
+
+			$(this).find('input').each(function() {
+				$(this).fadeOut('slow');
 			});
-			$(this).appendwith('<h2>Congratulations! You've entered some text!</h2>');
 		}
+		
 	});
 
-	$(document).on(ready, function() {
-		setTimeout({
-			$timeout.fadeIn('slow');
-		}, 1000);
+	// Was this supposed to just fade in after a delay?  I hope so.  That's what it does.
+
+	$(document).on("ready", function() {
+		//$(".timeout").fadeIn("slow");
+		 setTimeout(function(){
+		 	$(".timeout").fadeIn("slow");
+		 }, 3000);
+
 	});
 
 })(jQuery);
